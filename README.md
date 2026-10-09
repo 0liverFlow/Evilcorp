@@ -14,15 +14,15 @@ Le lab est constitué des 3 sous-réseaux suivants:
 - 10.10.10.0/24: Ce sous-réseau regroupe les machines DC01, WS02 et WS03.
 
 Les machines du domaine sont:  
-- DC01 (Windows Server 2022) représente le contrôleur de domaine
-- WS01 et WS02 sont deux postes de travail utilisant respectivement Windows 11 Pro et Enterprise
-- WS03 est une machine Ubuntu 24.04
+- DC01 (Windows Server 2022) représente le contrôleur de domaine.
+- WS01 et WS02 sont deux postes de travail utilisant respectivement Windows 11 Pro et Enterprise.
+- WS03 est une machine Ubuntu 24.04.
 
 ---
 
 # Attaques
 
-Le lab est composé de 05 scénarios ainsi que plusieurs vecteurs d'attaques dont:  
+Le lab est composé de 06 scénarios ainsi que plusieurs vecteurs d'attaques dont:  
 
 - Relai NTLM
 - LDAP Passback
