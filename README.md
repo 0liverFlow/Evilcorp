@@ -24,7 +24,7 @@ Les machines du domaine sont:
 
 Le lab est composé de 06 scénarios ainsi que plusieurs vecteurs d'attaques dont:  
 
-- Relai NTLM
+- Relais NTLM
 - LDAP Passback
 - Asreproasting
 - Kerberoasting
@@ -79,7 +79,7 @@ Le framework utilisé est le [Mitre Att&ck](https://attack.mitre.org/).
       + [Méthodologie](#méthodologie)
       + [Recommandations](#recommandations)
       + [Ressources](#ressources-4)
-   * [Relai NTLM](#relai-ntlm)
+   * [Relais NTLM](#relais-ntlm)
       + [Méthodologie](#méthodologie-1)
       + [Recommandations](#recommandations-1)
       + [Ressources](#ressources-5)
@@ -369,7 +369,7 @@ Comme vous le verrez, ces notions seront essentielles pour mieux comprendre les 
 
 # Scénario 1
 
-Le but de ce scénario est de partir d'un contexte non authentifié puis d'obtenir un accès initial au domaine. Pour cela, vous réaliserez des attaques telles que le relai NTLM, le Passback ainsi que l'AS-REP Roasting.  
+Le but de ce scénario est de partir d'un contexte non authentifié puis d'obtenir un accès initial au domaine. Pour cela, vous réaliserez des attaques telles que le relais NTLM, le Passback ainsi que l'AS-REP Roasting.  
 
 ## LDAP Passback
 
@@ -423,17 +423,17 @@ Cela peut se faire par exemple via l'utilisation d'identifiants par défaut. Par
 - [How to Hack Through a Pass-Back Attack](https://www.mindpointgroup.com/blog/how-to-hack-through-a-pass-back-attack)
 - [LDAP passback attack](https://www.acceis.fr/ldap-pass-back-attack/)
 
-## Relai NTLM
+## Relais NTLM
 
-Le relai NTLM ([T1557.001](https://attack.mitre.org/techniques/T1557/001/)) est une attaque de l'homme du milieu qui permet à un attaquant d'**intercepter et de relayer l'authentification NTLM d'un utilisateur vers une machine**.  
+Le relais NTLM ([T1557.001](https://attack.mitre.org/techniques/T1557/001/)) est une attaque de l'homme du milieu qui permet à un attaquant d'**intercepter et de relayer l'authentification NTLM d'un utilisateur vers une machine**.  
 
 Le but de cette attaque est d'obtenir une session en tant que l'utilisateur afin de réaliser des actions en son nom (ex: accéder à un partage réseau).  
 
-Le relai NTLM est une attaque assez redoutable, car elle permet à un attaquant d'obtenir un accès initial, de se déplacer latéralement sur le réseau ou encore d'élever ses privilèges **sans avoir aucune connaissance du mot de passe de la victime**. De plus, c'est une meilleure alternative à l'[attaque par empoisonnement LLMNR/NBT-NS](https://tcm-sec.com/llmnr-poisoning-and-how-to-prevent-it/) car elle ne nécessite **aucun craquage de hash**.  
+Le relais NTLM est une attaque assez redoutable, car elle permet à un attaquant d'obtenir un accès initial, de se déplacer latéralement sur le réseau ou encore d'élever ses privilèges **sans avoir aucune connaissance du mot de passe de la victime**. De plus, c'est une meilleure alternative à l'[attaque par empoisonnement LLMNR/NBT-NS](https://tcm-sec.com/llmnr-poisoning-and-how-to-prevent-it/) car elle ne nécessite **aucun craquage de hash**.  
 
-Dans ce poste, l'accent sera mis sur le relai SMB. En effet, NTLM étant indépendant de la couche applicative, il est possible de l'encapsuler dans d'autres protocoles tels que HTTP par exemple.
+Dans ce poste, l'accent sera mis sur le relais SMB. En effet, NTLM étant indépendant de la couche applicative, il est possible de l'encapsuler dans d'autres protocoles tels que HTTP par exemple.
 
-Afin de pouvoir réaliser le relai SMB, **[le client et le serveur ne doivent pas exiger la signature SMB](https://learn.microsoft.com/fr-fr/archive/blogs/josebda/the-basics-of-smb-signing-covering-both-smb1-and-smb2)**. J'insiste sur le mot "exiger", car la signature peut être activée sans être obligatoire. Par défaut, la signature SMB est obligatoire (**required**) sur les contrôleurs de domaine. En revanche, sur les postes de travail, elle est généralement activée (**enabled**) mais pas obligatoire.  
+Afin de pouvoir réaliser le relais SMB, **[le client et le serveur ne doivent pas exiger la signature SMB](https://learn.microsoft.com/fr-fr/archive/blogs/josebda/the-basics-of-smb-signing-covering-both-smb1-and-smb2)**. J'insiste sur le mot "exiger", car la signature peut être activée sans être obligatoire. Par défaut, la signature SMB est obligatoire (**required**) sur les contrôleurs de domaine. En revanche, sur les postes de travail, elle est généralement activée (**enabled**) mais pas obligatoire.  
 
 Une **signature** est un mécanisme de sécurité ayant pour but d'assurer l'intégrité ainsi que l'authenticité des messages échangés entre le client et le serveur. Dans le cas de SMB, la négociation de la signature de la session se fait dans un mode appellé "least requirements" dans lequel la session ne sera pas signée si la signature n'est pas exigée (obligatoire) par le client et le serveur. Dans le cas échéant, la session sera signée.  
 
@@ -464,7 +464,7 @@ responder -I ens33 -v
 
 ![](assets/024_Launching_Responder.png)
 
-3/ Lancer Ntlmrelayx en configurant la cible du relai NTLM avec l'option -t ou -f pour une liste de machines.  
+3/ Lancer Ntlmrelayx en configurant la cible du relais NTLM avec l'option -t ou -f pour une liste de machines.  
 
 ```bash
 impacket-ntlmrelayx -smb2support -socks -t '192.168.24.130' --no-http-server
@@ -520,7 +520,7 @@ Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\NTDS\Parameters'
 
 ### Ressources
 
-- [Relai NTLM Hackndo](https://beta.hackndo.com/ntlm-relay/)
+- [relais NTLM Hackndo](https://beta.hackndo.com/ntlm-relay/)
 - [SMB Relay Attack](https://tcm-sec.com/smb-relay-attacks-and-how-to-prevent-them/)
 - [NTLM Realy THR](https://www.thehacker.recipes/ad/movement/ntlm/relay)
 - [Disable LLMNR/NBT-NS/mDNS](https://projectblack.io/blog/disable-llmnr-gpo-netbios-mdns/)
