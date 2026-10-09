@@ -217,9 +217,9 @@ Au sein d'un domaine se trouve le **contrôleur de domaine**. Il s'agit d'un ser
 
 C'est également sur ce serveur que se trouve la base de données **NTDS.dit** (**N**ew **T**echnology **D**irectory **S**ervices) dans laquelle est stockée les informations du domaine comme par exemple les comptes utilisateurs, les groupes ainsi que les hashs des mots de passe des utilisateurs. Une compromission du contrôleur du domaine engendre généralement une compromission de l'ensemble du domaine.  
 
-Par ailleurs, Active Directory repose sur une **[structure hiérarchique](https://www.it-connect.fr/chapitres/domaine-arbre-et-foret/)** dans laquelle vous aurez des domaines, des arbres ainsi que des forêts. Un **arbre** (tree) est un ensemble de domaines partageant le même espace de nom tandis qu'une **forêt** (forest) est un ensemble d'arbres. Afin de faciliter l'authentification et l'accès aux ressources entre les arbres et forêts, Active Directory utilise des relations d'approbations ou trusts en anglais.  
+Par ailleurs, Active Directory repose sur une [structure hiérarchique](https://www.it-connect.fr/chapitres/domaine-arbre-et-foret/) dans laquelle vous aurez des domaines, des arbres ainsi que des forêts. Un **arbre** (tree) est un ensemble de domaines partageant le même espace de nom tandis qu'une **forêt** (forest) est un ensemble d'arbres. Afin de faciliter l'authentification et l'accès aux ressources entre les arbres et forêts, Active Directory utilise des relations d'approbations ou trusts en anglais.  
 
-Enfin, il est important de noter que Active Directory comprend différents [rôles](https://www.it-connect.fr/chapitres/les-differents-roles-adds-adfs-adcs/) tels que **[ADDS](https://learn.microsoft.com/fr-fr/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview)** (Active Directory Domain Services) qui assure l'authentification, le contrôle d'accès aux ressources ainsi que la gestion des objets du domaine. Il y a aussi l'**[ADCS](https://learn.microsoft.com/fr-fr/windows-server/identity/ad-cs/active-directory-certificate-services-overview)** (Active Directory Certificate Services) qui est un autre rôle assurant la gestion des certificats numériques utilisés pour l'authentification ou le chiffrement par exemple.  
+Enfin, il est important de noter que Active Directory comprend différents [rôles](https://www.it-connect.fr/chapitres/les-differents-roles-adds-adfs-adcs/) tels que [ADDS](https://learn.microsoft.com/fr-fr/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) (Active Directory Domain Services) qui assure l'authentification, le contrôle d'accès aux ressources ainsi que la gestion des objets du domaine. Il y a aussi l'[ADCS](https://learn.microsoft.com/fr-fr/windows-server/identity/ad-cs/active-directory-certificate-services-overview) (Active Directory Certificate Services) qui est un autre rôle assurant la gestion des certificats numériques utilisés pour l'authentification ou le chiffrement par exemple.  
 
 ![](assets/001_Domaine_Active_Directory.png)
 
@@ -240,7 +240,7 @@ Il existe deux versions de NTLM: NTLMv1 et NTLMv2.
 
 Quant à **NTLMv2**, il utilise l'algorithme HMAC-MD5 au lieu de DES. De plus, il n'est pas vulnérable aux attaques par table arc-en-ciel comme c'est le cas avec NTLMv1 lorsque l'ESS est désactivé.
 
-L'**[ESS](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-nlmp/a92716d5-d164-4960-9e15-300f4eef44a8)** (Extended Session Security) est une extension de sécurité introduite par Microsoft pour renforcer l’authentification NTLM. Elle permet par exemple de prévenir les attaques par table arc-en-ciel.  
+L'[ESS](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-nlmp/a92716d5-d164-4960-9e15-300f4eef44a8) (Extended Session Security) est une extension de sécurité introduite par Microsoft pour renforcer l’authentification NTLM. Elle permet par exemple de prévenir les attaques par table arc-en-ciel.  
 
 L'authentification NTLM (v2) se déroule en 3 grandes étapes:  
 
@@ -328,7 +328,6 @@ Le service déchiffre le ticket de service (ST) en utilisant son hash NT. Ensuit
 - [Kerberos en Active Directory](https://beta.hackndo.com/kerberos/) 
 - [Guide complet sur le fonctionnement de Kerberos](https://www.vaadata.com/fr/blog/authentification-kerberos-principes-et-fonctionnement/)
 
-
 ## LDAP
 
 **LDAP** (**L**ightweight **D**irectory **A**ccess **P**rotocol) est un protocole qui permet d'interargir avec un service d'annuaire.  
@@ -355,7 +354,6 @@ Finalement, il existe deux implémentations populaires de LDAP: 𝗢𝗽𝗲𝗻
 - [LDAP client authentication methods](https://www.ibm.com/support/pages/ldap-client-authentication-methods)
 - [OpenLDAP Administration](https://www.openldap.org/doc/admin24/security.html)
 - [LDAP Signing](https://www.aduneo.com/acces/la-desactivation-par-microsoft-du-ldap-non-signe-menace-les-connexions-non-chiffrees-a-active-directory)
-
 
 ## Résumé
 
@@ -1559,7 +1557,6 @@ Comme vous pouvez le voir, nous avons accès à la machine WS02.
 - [Network Pivoting With Ligolo-ng](https://www.youtube.com/watch?v=DM1B8S80EvQ)
 - [Pivoting With Ligolo-ng](https://notes.benheater.com/books/network-pivoting/page/pivoting-with-ligolo-ng)
 - [APPREND A PIVOTER COMME UN HACKER](https://www.youtube.com/watch?v=8oVeEDqV5DE)
-
 
 ## Usurpation de Tokens
 
