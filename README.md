@@ -2600,3 +2600,4 @@ Voci quelques ressources utiles pour approfondir vos connaissances sur la sécur
 Concernant les guides de sécurité, vous pouvez utiliser ceux-ci:  
 - [RECOMMANDATIONS RELATIVES À L'ADMINISTRATION SÉCURISÉE DES SYSTÈMES D'INFORMATION REPOSANT SUR MICROSOFT ACTIVE DIRECTORY - ANSSI](https://messervices.cyber.gouv.fr/documents-guides/anssi-guide-admin_securisee_si_ad_v1-0%20(3).pdf)
 - [Detecting and mitigating Active Directory compromises](https://www.cyber.gov.au/publication/detecting-and-mitigating-active-directory-compromises)
+- [Awesome Security Hardening](https://github.com/decalage2/awesome-security-hardening#active-directory)
