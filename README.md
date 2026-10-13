@@ -277,6 +277,7 @@ Il est important de souligner que NTLM a été [déprécié](https://learn.micro
 - [Closing the Door on Net-NTLMv1](https://cloud.google.com/blog/topics/threat-intelligence/net-ntlmv1-deprecation-rainbow-tables)
 - [Cracking NTLMv1 SSP With Rainbow Tables](https://www.sprocketsecurity.com/blog/cracking-ntlmv1-ssp-with-rainbow-tables)
 - [NTLMv1 vs NTLMv2](https://www.praetorian.com/blog/ntlmv1-vs-ntlmv2/)
+- [How to Compromise Every Internal Network](https://www.youtube.com/watch?v=_7mUfuk0Qfk)
 - [Restrict NTLM: Incoming NTLM traffic](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/security-policy-settings/network-security-restrict-ntlm-incoming-ntlm-traffic)
 
 ## Kerberos
@@ -325,7 +326,8 @@ Le service déchiffre le ticket de service (ST) en utilisant son hash NT. Ensuit
 ### Ressources
 
 - [The Last Kerberos Read You’ll Ever Need](https://ericesquivel.github.io/posts/kerberos)
-- [Kerberos en Active Directory](https://beta.hackndo.com/kerberos/) 
+- [Kerberos en Active Directory](https://beta.hackndo.com/kerberos/)
+- [La sécurité des protocoles d’authentification NTLM et Kerberos](https://www.devoteam.com/fr/expert-view/la-securite-des-protocoles-dauthentification-ntlm-et-kerberos-en-environnement-active-directory/)
 - [Guide complet sur le fonctionnement de Kerberos](https://www.vaadata.com/fr/blog/authentification-kerberos-principes-et-fonctionnement/)
 
 ## LDAP
